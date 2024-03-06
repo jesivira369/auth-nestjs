@@ -56,6 +56,6 @@ export class UsersService {
   }
 
   async getUserByEmail(email: string) {
-    return await this.userModel.findOne({ email }).select('-password');
+    return await this.userModel.findOne({ email });
   }
 }
