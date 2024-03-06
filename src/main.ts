@@ -12,6 +12,10 @@ async function bootstrap() {
     .setTitle('API with NestJS, TypeORM and MongoDB')
     .setDescription('The API created with NestJS and TypeORM')
     .setVersion('1.0')
+    .addBearerAuth({
+      bearerFormat: 'JWT',
+      type: 'http',
+    }, 'jwt')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
